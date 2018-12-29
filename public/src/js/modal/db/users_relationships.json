@@ -1,0 +1,27 @@
+{
+	"title": "Relationships",
+	"slug": "users_relationships",
+	"collection": "users_relationships",
+	"fields": [
+		{
+			"name": "first_name",
+			"label": "First Name",
+			"type": "text"
+		},
+		{
+			"name": "last_name",
+			"label": "Last Name",
+			"type": "text"
+		},
+		{
+			"name": "relationships",
+			"label": "Relationships",
+			"type": "text"
+		},
+		{
+			"name": "_id",
+			"label": "Id",
+			"type": "text"
+		}
+	]			
+}		

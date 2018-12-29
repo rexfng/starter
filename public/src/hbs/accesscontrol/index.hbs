@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Access Control</title>
+	{{>style}}
+</head>
+<body>
+	<h1>Access Control</h1>
+	<form>
+		<label for="">Create Role</label><input type="text" placeholder="">
+		<button type="submit">Add</button>
+		<br>
+		<select name="" id="">
+			<option value="role" disabled="" selected="">Role</option>
+			<option name="admin" value="admin">Admin</option>
+			<option name="group_leader" value="group_leader">Group Leader</option>
+			<option name="members" value="members">Members</option>
+		</select>
+	</form>
+	<br><br>
+	<form>
+		<fieldset>
+			<details>
+				<summary>Resource: users</summary>
+				<fieldset>
+				  	<details class="resource-key-permissions">
+					    <summary>First Name</summary>	
+						<label for="users-first_name-create:any">create:any</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-create:any" 
+								id="users-first_name-create:any" 
+								type="checkbox"
+							><br>
+						<label for="users-first_name-read:any">read:any</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-read:any" 
+								id="users-first_name-read:any" 
+								type="checkbox"
+							><br>
+						<label for="users-first_name-update:any">update:any</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-update:any" 
+								id="users-first_name-update:any" 
+								type="checkbox"
+						><br>
+						<label for="users-first_name-delete:own">delete:any</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-delete:own" 
+								id="users-first_name-delete:any" 
+								type="checkbox"
+						><br><br>
+
+						<label for="users-first_name-create:own">create:own</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-create:own" 
+								id="users-first_name-create:own" 
+								type="checkbox"
+						><br>
+						<label for="users-first_name-read:own">read:own</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-read:own" 
+								id="users-first_name-read:own" 
+								type="checkbox"
+						><br>
+						<label for="users-first_name-update:own">update:own</label>
+							<input 
+								name="users-first_name" 
+								value="users-first_name-update:own" 
+								id="users-first_name-update:own" type="checkbox"
+						><br>
+						<label for="users-first_name-delete:own">delete:own</label>
+							<input 
+								name="users-first_name" value="users-first_name-delete:own" id="users-first_name-delete:own" type="checkbox"
+						><br><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Last Name</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Email</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Phone</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Address</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+			</details>
+		</fieldset>
+		<fieldset>
+			<details>
+				<summary>Resource: group</summary>
+				<fieldset>
+				  	<details>
+					    <summary>First Name</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Last Name</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Email</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Phone</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Address</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+			</details>
+		</fieldset>
+		<fieldset>
+			<details>
+				<summary>Resource: attendance</summary>
+				<fieldset>
+				  	<details>
+					    <summary>First Name</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Last Name</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Email</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Phone</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+				<fieldset>
+				  	<details>
+					    <summary>Address</summary>	
+						<label for="">*any</label><input type="checkbox"><br>		    	
+						<label for="">create:any</label><input type="checkbox"><br>
+						<label for="">read:any</label><input type="checkbox"><br>
+						<label for="">update:any</label><input type="checkbox"><br>
+						<label for="">delete:any</label><input type="checkbox"><br><br>
+
+						<label for="">*own</label><input type="checkbox"><br>		    					
+						<label for="">create:own</label><input type="checkbox"><br>
+						<label for="">read:own</label><input type="checkbox"><br>
+						<label for="">update:own</label><input type="checkbox"><br>
+						<label for="">delete:own</label><input type="checkbox"><br>
+					</details>
+				</fieldset>
+			</details>
+		</fieldset>
+	</form>
+</body>
+</html>

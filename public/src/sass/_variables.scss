@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto');
+
+
+/////////////////////////
+//					   //
+//		  COLOR    	   //
+//					   //
+/////////////////////////
+
+$orange: #F48631;
+$lightorange: #F4AC3C;
+$blue: #5F7EE3;
+$darkblue: #3C4E88;
+$white: #FFFFFF;
+$gray: #979797; 
+$lightgray: #9B9B9B;
+$black: #333333;
+$red: #d63c3a;
+
+
+/////////////////////////
+//					   //
+//     TYPOGRAPHY      //
+//					   //
+/////////////////////////
+$fontOne: 'Open Sans';
+$font1: 'Open Sans';
+$fontTwo: 'Roboto';
+$font2: 'Roboto';
+
+h1,h2,h3,p,a,blockquote,form,input,textarea, span, td, th, button, ul, li, label{
+	font-family: $fontOne, sans-serif;
+}
+
+/////////////////////////
+//					   //
+//  GRID & BREAKPOINTS //
+//					   //
+/////////////////////////
+//number of columns in this grid, you can customize it for every screen size below by changing the grid size value!
+// ie. 	('xxl', 2560px, $gridSize/ 2),
+
+$gridSize : 12 ; 
+$breakpoints : (
+	('xxl', 2560px, $gridSize),
+	('xl', 1440px, $gridSize),
+	('l', 1024px, $gridSize),
+	('m', 769px, $gridSize),
+	('s', 425px, $gridSize)
+);
+$border-box-mode : true;
+
+/* general styling shared between versions */
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* version 4's styling (using calendar-o) */
+.calendar::before {
+  font-family: FontAwesome;
+  content: "\f133";
+}
+
+/* version 5's styling (using updated regular style of calendar) */
+.calendar::before {
+  font-family: "Font Awesome 5 Free";  /* updated font-family */
+  font-weight: 400; /* regular style/weight */
+  content: "\f133";
+}

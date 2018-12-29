@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sign In with Auth0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto">
+  <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <style>
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+section#login-view, section#register-view {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#login-view form, section#register-view form {
+  margin: 0 auto;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view form, section#register-view form {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  section#login-view form, section#register-view form {
+    padding: 0;
+  }
+}
+
+section#login-view form .title-wrapper, section#register-view form .title-wrapper {
+  margin: 1em;
+}
+
+section#login-view form .title-wrapper h1, section#register-view form .title-wrapper h1 {
+  text-align: center;
+  margin: 0;
+}
+
+section#login-view form .title-wrapper p, section#register-view form .title-wrapper p {
+  text-align: center;
+  font-size: .9em;
+  color: gray;
+  line-height: 1.5em;
+}
+
+section#login-view form .f-control, section#register-view form .f-control {
+  width: 100%;
+  margin: .5em 0 .7em;
+  position: relative;
+}
+
+section#login-view form .f-control label, section#register-view form .f-control label {
+  display: block;
+  padding: .5em 0;
+}
+
+section#login-view form .f-control a, section#register-view form .f-control a {
+  padding: .5em 0;
+  position: absolute;
+  top: 7px;
+  right: 0;
+  font-size: .7em;
+  color: gray;
+}
+
+section#login-view form .f-control input, section#login-view form .f-control button, section#register-view form .f-control input, section#register-view form .f-control button {
+  width: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+}
+
+section#login-view form .f-control input[type=submit], section#login-view form .f-control button, section#register-view form .f-control input[type=submit], section#register-view form .f-control button {
+  display: block;
+  background-color: #1862c6;
+  color: white;
+  outline: none;
+}
+
+section#login-view form .f-control input[type=submit]#google-submit, section#login-view form .f-control button#google-submit, section#register-view form .f-control input[type=submit]#google-submit, section#register-view form .f-control button#google-submit {
+  background-color: #dd4a37;
+}
+
+section#login-view form .f-control input[type=submit]#facebook-submit, section#login-view form .f-control button#facebook-submit, section#register-view form .f-control input[type=submit]#facebook-submit, section#register-view form .f-control button#facebook-submit {
+  background-color: #527ebe;
+}
+
+section#login-view form .f-control input[type=submit]#email-submit, section#login-view form .f-control button#email-submit, section#register-view form .f-control input[type=submit]#email-submit, section#register-view form .f-control button#email-submit {
+  background-color: #545454;
+}
+
+section#login-view form aside p, section#register-view form aside p {
+  text-align: center;
+  font-size: .7em;
+  color: gray;
+}
+
+section#login-view form aside p a, section#register-view form aside p a {
+  padding: 0 1em;
+  color: #1862c6;
+  text-decoration: none;
+}
+
+section#login-view #poster, section#register-view #poster {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+section#not-found-view,
+section#confirmemail-view {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#not-found-view div.wrapper,
+section#confirmemail-view div.wrapper {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center;
+}
+
+section#not-found-view div.wrapper span,
+section#confirmemail-view div.wrapper span {
+  font-size: .7em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 1.5em 0;
+}
+
+section#not-found-view div.wrapper h1,
+section#confirmemail-view div.wrapper h1 {
+  margin: 0 auto;
+}
+
+section#not-found-view div.wrapper p,
+section#confirmemail-view div.wrapper p {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+section#not-found-view div.wrapper div.form-control input,
+section#confirmemail-view div.wrapper div.form-control input {
+  display: block;
+  background-color: #1862c6;
+  color: white;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  margin: 1.5em auto 0;
+  outline: none;
+}
+
+section#not-found-view #poster,
+section#confirmemail-view #poster {
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: gray;
+  padding: 1.5em;
+}
+
+nav #search {
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  border-radius: 50px;
+  margin: 0 1em;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: .5em 1em;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 60%;
+}
+
+nav #search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 100;
+  font-size: .9em;
+}
+
+nav #search i {
+  color: gray;
+  margin: 0 1em 0 0;
+}
+
+nav .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+nav #avatar {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+nav #avatar img {
+  width: 35px;
+  height: 35px;
+  border-radius: 35px;
+  position: absolute;
+}
+
+.dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border-radius: 5px;
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em 0;
+  z-index: 100;
+  -webkit-box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown li {
+  padding: 1em 2em;
+  font-size: .8em;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.dropdown li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transition: .1s all ease-in-out;
+  transition: .1s all ease-in-out;
+}
+
+.dropdown.hide {
+  display: none;
+}
+
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+#db-get {
+  background-color: #f8fafd;
+  height: calc(100vh - 80px - 8em);
+  padding: 4em;
+}
+
+#db-get header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+#db-get header button {
+  padding: .8em 1em;
+  margin: .5em 0 .5em .7em;
+  border: none;
+  border-radius: 3px;
+  font-size: .8em;
+  outline: none;
+  cursor: pointer;
+}
+
+#db-get header button.add-new-member-btn {
+  background-color: #1aa2e4;
+  color: white;
+}
+
+#db-get header button.export-btn {
+  color: #7589a5;
+  background-color: #dae4f3;
+}
+
+#db-get h1 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 0 0 2em;
+}
+
+#db-get .wrapper {
+  margin: 0 auto;
+}
+
+#db-get table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+#db-get table td, #db-get table th {
+  font-size: .7em;
+  text-align: left;
+}
+
+#db-get table th {
+  text-transform: uppercase;
+  background: #f8fafd;
+  border: none;
+  outline: none;
+  font-size: .6em;
+  padding: 2em 1.7em;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#db-get table tr:first-child {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+}
+
+#db-get table td {
+  padding: 1.5em;
+}
+
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li {
+  font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (min-width: 1440px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster, #db-post header, #db-post .wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right, #db-post form .f-control {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 50%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster, section#not-found-view #poster,
+  section#confirmemail-view #poster {
+    width: 0%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: none;
+  }
+  nav #logo {
+    width: 16.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  nav ul, nav .right {
+    width: 41.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  section#login-view form, section#register-view form, section#not-found-view div.wrapper,
+  section#confirmemail-view div.wrapper {
+    width: 66.66667%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-get .wrapper, #db-post header, #db-post .wrapper {
+    width: 83.33333%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #db-post form .f-control {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+#db-post {
+  background-color: #f8fafd;
+  height: calc(100vh - 80px - 4em);
+  padding: 2em 4em;
+}
+
+#db-post header {
+  margin: 0 auto 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-item: center;
+}
+
+#db-post header h1 {
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 100;
+}
+
+#db-post header .btns-personal-information {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+#db-post header .btns-personal-information button {
+  display: block;
+  border: none;
+  padding: .8em 1em;
+  margin: 0 0 0 1em;
+  font-size: .8em;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+#db-post header .btns-personal-information button.save {
+  background-color: #73cc1e;
+  color: white;
+}
+
+#db-post header .btns-personal-information button.cancel {
+  background-color: #dae4f3;
+  color: #6c809d;
+}
+
+#db-post .wrapper {
+  margin: 0 auto;
+  padding: 2em 4em;
+  background-color: white;
+}
+
+#db-post .wrapper h1 {
+  font-size: 1em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 80, 0.5);
+  margin: .5em 1.5em;
+}
+
+#db-post form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#db-post form .f-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 1em auto .2em;
+}
+
+#db-post form .f-control label {
+  font-size: .7em;
+  font-weight: 900;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 1em 0;
+}
+
+#db-post form .f-control input, #db-post form .f-control select {
+  border: solid 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: .8em;
+  outline: none;
+  padding: 1em .8em;
+}
+
+#db-post form .f-control input[type=date] {
+  padding: .8em;
+}
+
+#db-post form .f-control select {
+  border: solid 1px rgba(0, 0, 0, 0.15);
+  height: 40px;
+  background: white;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.modal {
+  padding: 2em 1.5em;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal > h1 {
+  font-size: .8em;
+  margin: 0 auto;
+}
+
+.modal > .line {
+  height: 1px;
+  width: 100%;
+  margin: 1em 0;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+#close-modal {
+  color: rgba(0, 0, 0, 0.3);
+  text-align: right;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
+.comfirmed-password-modal-wrapper button {
+  display: block;
+  background-color: #1862c6;
+  color: white;
+  outline: none;
+  width: inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 100%;
+  cursor: pointer;
+}
+
+  </style>
+<body>
+<section id="login-view">
+	<form onsubmit="return false;" method="post" novalidate>
+		<div class="title-wrapper">
+			<h1>Sign In</h1>
+			<p>Free access to our dashboard.</p>
+		</div>
+		<div class="f-control email-input" style="display: none;">
+			<label for="email">Email Address</label>
+			<input required id="email" type="text" placeholder="name@address.com">
+		</div>
+		<div class="f-control email-input" style="display: none;">
+			<label for="password">Password</label>
+			<input required id="password" type="password" placeholder="Enter your password"><a href="http://127.0.0.1:8000/passwordreset">Forget password?</a>
+		</div>
+		<div class="f-control">
+			<button id="email-submit" name="submit"><i class="fa fa-envelope"></i> Sign in with Email</button>
+		</div>
+		<div class="f-control social">
+			<button id="google-submit" name="google"><i class="fa fa-google"></i> Sign in with Google</button>
+		</div>
+		<div class="f-control social">
+			<button id="facebook-submit" name="facebook-submit"><i class="fa fa-facebook"></i> Sign in with Facebook</button>
+		</div>
+		<aside>
+			<p>Dont't have an account yet?<a href="http://127.0.0.1:8000/register">Sign up.</a></p>
+		</aside>
+	</form>
+	<div id="poster" style="background-image:url(https://images.unsplash.com/photo-1518887371124-412923b6ccff?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0ca7e3d745d3d5d14cad59a77b994de4&auto=format&fit=crop&w=750&q=80)"></div>
+</section>  
+     
+  <!--[if IE 8]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+  <![endif]-->
+
+  <!--[if lte IE 9]>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/base64.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/es5-shim.min.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.auth0.com/js/auth0/9.2/auth0.min.js"></script>
+  <script src="https://cdn.auth0.com/js/polyfills/1.0/object-assign.min.js"></script>
+  <script>
+    window.addEventListener('load', function() {
+
+      var config = JSON.parse(
+        decodeURIComponent(escape(window.atob('@@config@@')))
+      );
+
+      var params = Object.assign({
+        /* additional configuration needed for use of custom domains
+        overrides: {
+          __tenant: config.auth0Tenant,
+          __token_issuer: 'YOUR_CUSTOM_DOMAIN'
+        }, */
+        domain: config.auth0Domain,
+        clientID: config.clientID,
+        redirectUri: config.callbackURL,
+        responseType: 'code'
+      }, config.internalOptions);
+
+      var webAuth = new auth0.WebAuth(params);
+
+      var databaseConnection = 'IO';
+  	
+  	  var l_count = 0;
+      function login(e) {
+        e.preventDefault();
+	    l_count += 1;
+	    if (l_count == 1) {
+	    	$('.email-input').fadeIn()
+	    	$('.f-control.social').fadeOut()
+	    }else{
+	        var username = document.getElementById('email').value;
+	        var password = document.getElementById('password').value;
+	        webAuth.login({
+	          realm: databaseConnection,
+	          username: username,
+	          password: password
+	        }, function(err) {
+	          if (err) displayError(err);
+	        });
+		 }
+      }
+
+      function signup() {
+        var email = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+
+        webAuth.redirect.signupAndLogin({
+          connection: databaseConnection,
+          email: email,
+          password: password
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+
+      function loginWithGoogle() {
+        webAuth.authorize({
+          connection: 'google-oauth2'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+
+      function loginWithFacebook() {
+        webAuth.authorize({
+          connection: 'facebook'
+        }, function(err) {
+          if (err) displayError(err);
+        });
+      }
+
+      function displayError(err) {
+        var errorMessage = document.getElementById('error-message');
+        errorMessage.innerHTML = err.description;
+        errorMessage.style.display = 'block';
+      }
+
+      document.getElementById('email-submit').addEventListener('click', login);
+      document.getElementById('google-submit').addEventListener('click', loginWithGoogle);
+      document.getElementById('facebook-submit').addEventListener('click', loginWithFacebook);
+
+    });
+  </script>
+</body>
+</html>

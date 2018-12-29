@@ -1,0 +1,78 @@
+{
+	"title": "Personal Information",
+	"slug": "personal-information",
+	"collection": "users",
+	"searchable_fields":[
+		"first_name",
+		"last_name",
+		"email",
+		"phone_number"
+	],
+	"fields": [
+		{
+			"name": "first_name",
+			"label": "First Name",
+			"type": "text",
+			"placeholder": "Enter First Name"
+		},
+		{
+			"name": "last_name",
+			"label": "Last Name",
+			"type": "text",
+			"placeholder": "Enter Last Name"
+		},
+		{
+			"name": "email",
+			"label": "Email Address",
+			"type": "email",
+			"placeholder": "Enter email"					
+		},
+		{
+			"name": "phone_number",
+			"label": "Phone Number",
+			"type": "text",
+			"placeholder": "Enter 10 digit number"
+		},
+		{
+			"name": "gender",
+			"label": "Gender",
+			"type": "select",
+			"option":[
+				{
+					"key": "Male",
+					"value": "male",
+				},
+				{
+					"key": "Female",
+					"value": "female"
+				}
+			]
+		},
+		{
+			"name": "dob",
+			"label": "Date of Birth",
+			"type": "date",
+			"placeholder": "MM-DD-YYYY"
+		},
+		{
+			"name": "suite",
+			"label": "Suite Number",
+			"type": "text",
+			"placeholder": "Enter Suite Number"
+		},
+		{
+			"name": "address",
+			"label": "Address",
+			"type": "address",
+			"placeholder": "Enter Address"
+		}, 
+		{
+			"name": "file",
+			"label": "File",
+			"type": "file",
+			"placeholder": "File",
+			"multiple": true
+		}
+	]
+}
+

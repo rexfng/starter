@@ -1,0 +1,12 @@
+{
+	"title": "Register",
+	"subtitle": "Register to access dashboard.",
+	"email-label": "Email Address",
+	"email-placeholder": "name@address.com",
+	"password-label": "Password",
+	"password-placeholder": "Enter your password",
+	"forget-password-label": "Forget password?",
+	"submit-button-label": "Register",
+	"aside-message": "Have an account already?",
+	"sign-up-label":"Log In"
+}

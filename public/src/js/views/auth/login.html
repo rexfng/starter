@@ -1,0 +1,29 @@
+<section id="login-view">
+	<form novalidate>
+		<div class="title-wrapper">
+			<h1>{{title}}</h1>
+			<p>{{subtitle}}</p>
+		</div>
+		<div class="f-control email-input" style="display: none;">
+			<label for="login-email">{{email-label}}</label>
+			<input required id="login-email" type="text" placeholder="{{email-placeholder}}">
+		</div>
+		<div class="f-control email-input" style="display: none;">
+			<label for="login-password">{{password-label}}</label>
+			<input required id="login-password" type="password" placeholder="{{password-placeholder}}"><a href="">{{forget-password-label}}</a>
+		</div>
+		<div class="f-control">
+			<button id="email-submit" name="submit"><i class="fa fa-envelope"></i> Sign in with Email</button>
+		</div>
+		<div class="f-control social">
+			<button id="google-submit" name="google"><i class="fa fa-google"></i> Sign in with Google</button>
+		</div>
+		<div class="f-control social">
+			<button id="facebook-submit" name="facebook-submit"><i class="fa fa-facebook"></i> Sign in with Facebook</button>
+		</div>
+		<aside>
+			<p>{{aside-message}}<a href="/register">{{sign-up-label}}</a></p>
+		</aside>
+	</form>
+	<div id="poster" style="background-image:url(https://images.unsplash.com/photo-1518887371124-412923b6ccff?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0ca7e3d745d3d5d14cad59a77b994de4&auto=format&fit=crop&w=750&q=80)"></div>
+</section>

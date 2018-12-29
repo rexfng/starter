@@ -1,0 +1,17 @@
+{
+	"title": "Church Information",
+	"slug": "church-information",
+	"collection": "church_info",
+	"fields": [
+		{
+			"name": "date_of_conversion",
+			"label": "Date of Conversion",
+			"type": "date"
+		},
+		{
+			"name": "date_of_baptism",
+			"label": "Date of Baptism",
+			"type": "date"
+		}			
+	]			
+}

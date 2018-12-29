@@ -1,0 +1,23 @@
+<section id="register-view">
+	<form>
+		<div class="title-wrapper">
+			<h1>{{title}}</h1>
+			<p>{{subtitle}}</p>
+		</div>
+		<div class="f-control">
+			<label for="register-email">{{email-label}}</label>
+			<input required id="register-email" type="text" placeholder="{{email-placeholder}}">
+		</div>
+		<div class="f-control">
+			<label for="register-password">{{password-label}}</label>
+			<input required id="register-password" type="password" placeholder="{{password-placeholder}}">
+		</div>
+		<div class="f-control">
+			<input id="register-submit" type="submit" value="{{submit-button-label}}">
+		</div>
+		<aside>
+			<p>{{aside-message}}<a href="https://churchofgodio.auth0.com/authorize?response_type=token&client_id=qAcVjoFyCAzPatzM282t4VpTWDcIF3Ae& connection=IO&redirect_uri=http://127.0.0.1:8000/authorize&scope=openid+profile">{{sign-up-label}}</a></p>
+		</aside>
+	</form>
+	<div id="poster" style="background-image:url(https://images.unsplash.com/photo-1518887371124-412923b6ccff?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0ca7e3d745d3d5d14cad59a77b994de4&auto=format&fit=crop&w=750&q=80)"></div>
+</section>

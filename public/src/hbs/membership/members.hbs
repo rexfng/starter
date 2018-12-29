@@ -1,0 +1,49 @@
+{{> style }}
+{{> nav }}
+<section id="db">
+	<header>
+		<h1 >All {{collection}}</h1>
+		<div class="search" >
+			<i class="fa fa-search"></i>
+			<input type="text" placeholder="Search">
+		</div>
+		<div>
+			<button id="filter-btn" class="filter-btn inactive">Filter<div id="filters" class="filters inactive"></div></button>
+			<button id="export-btn" class="export-btn"><a target="_blank" href="/members/export.csv" download>Export as</a></button>
+			<button id="add-new-member-btn" class="create add-new-member-btn"><i class="fa fa-plus"></i> New {{collection}}</button>
+		</div>
+	</header>
+	<div id="table-wrapper">
+		<table>
+			<tr>
+				<th>View</th>
+				<th>Delete</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Contact Number</th>
+				<th>Address</th>
+				<th>Birthday</th>
+				<th>Group</th>
+				<th>Remark</th>
+			</tr>
+			{{#each response}}
+				<tr id="{{_id}}">
+					<td><a href="/member/{{_id}}">View</a></td>
+					<td><button class="delete" data-id="{{_id}}">Delete</button></td>
+					<td>{{data.first_name}} {{data.last_name}}</td>
+					<td>{{data.email }}</td>
+					<td>{{data.phone_number }}</td>					
+					<td>{{data.address}}</td>
+					<td>{{data.dob}}</td>
+					<td>{{data.group}}</td>
+					<td>{{data.remark}}</td>
+				</tr>
+			  
+			{{/each}}
+		</table>
+   	</div>
+</section>
+<style>
+	display: flex; 
+	flex-direction: column;
+</style>

@@ -1,0 +1,20 @@
+{{> style }}
+{{> nav }}
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAGuQURJoOYE48jJaNg0TI8HKth2lmSbbA"></script>
+<section id="db">
+	<form method="POST" action="/member/{{response._id}}">
+		<label for="">ID</label><input type="text" value="{{response._id}}" disabled=""><br>
+		<label for="">First Name</label><input required type="text" name="first_name" placeholder="first Name" value="{{response.data.first_name}}"><br>
+		<label for="">Last Name</label><input required type="text" name="last_name" placeholder="Last Name" value="{{response.data.last_name}}"><br>
+		<label for="">Phone Number</label><input name="phone_number" type="tel" placeholder="Phone Number" value="{{response.data.phone_number}}"><br>
+		<label for="">Email</label><input name="email" type="email" placeholder="Email" value="{{response.data.email}}"><br>
+		<label for="">Address</label><input id="input_address" name="address" type="text" placeholder="Address" value="{{response.data.address}}"><br>
+		<label for="">Birthday</label><input name="dob" type="date" placeholder="Birthday" value="{{response.data.dob}}"><br>
+		<label for="">Remark</label><input name="remark" type="text" placeholder="Remark" value="{{response.data.remark}}"><br>
+		<input type="submit" value="save">
+	</form>
+</section>
+<style>
+	display: flex; 
+	flex-direction: column;
+</style>

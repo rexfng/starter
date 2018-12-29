@@ -1,0 +1,21 @@
+<section id="db">
+	<header>
+		<h1 >All {{collection}}</h1>
+		<div class="search" >
+			<i class="fa fa-search"></i>
+			<input type="text" placeholder="Search">
+		</div>
+		<div>
+			<button id="filter-btn" class="filter-btn inactive">Filter<div id="filters" class="filters inactive"></div></button>
+			<button id="export-btn" class="export-btn">Export as</button>
+			<button id="add-new-member-btn" class="add-new-member-btn"><i class="fa fa-plus"></i> New {{collection}}</button>
+		</div>
+	</header>
+	<div id="table-wrapper">
+		<table></table>
+   	</div>
+</section>
+<style>
+	display: flex; 
+	flex-direction: column;
+</style>

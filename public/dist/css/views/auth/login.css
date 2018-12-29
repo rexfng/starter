@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto");
+h1, h2, h3, p, a, blockquote, form, input, textarea, span, td, th, button, ul, li, label {
+  font-family: "Open Sans", sans-serif; }
+
+/* general styling shared between versions */
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased; }
+
+/* version 4's styling (using calendar-o) */
+.calendar::before {
+  font-family: FontAwesome;
+  content: "\f133"; }
+
+/* version 5's styling (using updated regular style of calendar) */
+.calendar::before {
+  font-family: "Font Awesome 5 Free";
+  /* updated font-family */
+  font-weight: 400;
+  /* regular style/weight */
+  content: "\f133"; }
+
+@media screen and (min-width: 1440px) {
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    box-sizing: border-box; }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    box-sizing: border-box; } }
+
+@media screen and (max-width: 1440px) and (min-width: 1024px) {
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    box-sizing: border-box; }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    box-sizing: border-box; } }
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  section#login-view form, section#register-view form {
+    width: 33.33333%;
+    box-sizing: border-box; }
+  section#login-view #poster, section#register-view #poster {
+    width: 66.66667%;
+    box-sizing: border-box; } }
+
+@media screen and (max-width: 769px) and (min-width: 425px) {
+  section#login-view #poster, section#register-view #poster {
+    width: 0%;
+    box-sizing: border-box;
+    display: none; }
+  section#login-view form, section#register-view form {
+    width: 66.66667%;
+    box-sizing: border-box; } }
+
+@media screen and (max-width: 425px) {
+  section#login-view #poster, section#register-view #poster {
+    width: 0%;
+    box-sizing: border-box;
+    display: none; }
+  section#login-view form, section#register-view form {
+    width: 66.66667%;
+    box-sizing: border-box; } }
+
+section#login-view, section#register-view {
+  width: 100%;
+  height: 100vh;
+  display: flex; }
+  section#login-view form, section#register-view form {
+    margin: 0 auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    @media only screen and (max-width: 769px) and (min-width: 425px) {
+      section#login-view form, section#register-view form {
+        padding: 0; } }
+    @media only screen and (max-width: 425px) {
+      section#login-view form, section#register-view form {
+        padding: 0; } }
+    section#login-view form .title-wrapper, section#register-view form .title-wrapper {
+      margin: 1em; }
+      section#login-view form .title-wrapper h1, section#register-view form .title-wrapper h1 {
+        text-align: center;
+        margin: 0; }
+      section#login-view form .title-wrapper p, section#register-view form .title-wrapper p {
+        text-align: center;
+        font-size: .9em;
+        color: gray;
+        line-height: 1.5em; }
+    section#login-view form .f-control, section#register-view form .f-control {
+      width: 100%;
+      margin: .5em 0 .7em;
+      position: relative; }
+      section#login-view form .f-control label, section#register-view form .f-control label {
+        display: block;
+        padding: .5em 0; }
+      section#login-view form .f-control a, section#register-view form .f-control a {
+        padding: .5em 0;
+        position: absolute;
+        top: 7px;
+        right: 0;
+        font-size: .7em;
+        color: gray; }
+      section#login-view form .f-control input, section#login-view form .f-control button, section#register-view form .f-control input, section#register-view form .f-control button {
+        width: inherit;
+        box-sizing: border-box;
+        padding: 0.7em 1em;
+        border-radius: 5px;
+        border: 1px solid lightgray; }
+      section#login-view form .f-control input[type=submit], section#login-view form .f-control button, section#register-view form .f-control input[type=submit], section#register-view form .f-control button {
+        display: block;
+        background-color: #1862c6;
+        color: white;
+        outline: none; }
+        section#login-view form .f-control input[type=submit]#google-submit, section#login-view form .f-control button#google-submit, section#register-view form .f-control input[type=submit]#google-submit, section#register-view form .f-control button#google-submit {
+          background-color: #dd4a37; }
+        section#login-view form .f-control input[type=submit]#facebook-submit, section#login-view form .f-control button#facebook-submit, section#register-view form .f-control input[type=submit]#facebook-submit, section#register-view form .f-control button#facebook-submit {
+          background-color: #527ebe; }
+        section#login-view form .f-control input[type=submit]#email-submit, section#login-view form .f-control button#email-submit, section#register-view form .f-control input[type=submit]#email-submit, section#register-view form .f-control button#email-submit {
+          background-color: #545454; }
+    section#login-view form aside p, section#register-view form aside p {
+      text-align: center;
+      font-size: .7em;
+      color: gray; }
+      section#login-view form aside p a, section#register-view form aside p a {
+        padding: 0 1em;
+        color: #1862c6;
+        text-decoration: none; }
+  section#login-view #poster, section#register-view #poster {
+    background-size: cover;
+    background-position: center;
+    height: 100%; }

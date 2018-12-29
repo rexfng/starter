@@ -1,0 +1,12 @@
+<div style="order: {{id}};" class="f-control">
+	<label for="{{uid}}">{{label}}</label>
+	<span classs="inliner">
+		{{#if multiple}}
+			<input class="{{type}}" id="{{uid}}" type="{{type}}" name="{{name}}" placeholder="{{placeholder}}" multiple>
+		{{else}}
+			<input class="{{type}}" id="{{uid}}" type="{{type}}" name="{{name}}" placeholder="{{placeholder}}" >
+		{{/if}}
+
+		
+	</span>
+</div>

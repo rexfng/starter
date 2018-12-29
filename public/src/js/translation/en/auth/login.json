@@ -1,0 +1,12 @@
+{
+	"title": "Sign in",
+	"subtitle": "Free access to our dashboard.",
+	"email-label": "Email Address",
+	"email-placeholder": "name@address.com",
+	"password-label": "Password",
+	"password-placeholder": "Enter your password",
+	"forget-password-label": "Forget password?",
+	"submit-button-label": "Sign in",
+	"aside-message": "Don't have an account yet?",
+	"sign-up-label": "Sign up."
+}
